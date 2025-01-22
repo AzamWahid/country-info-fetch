@@ -5,7 +5,9 @@ const cardImg = document.querySelector('#card-img');
 const cardTitle = document.querySelector('#cardTitle');
 const cardText = document.querySelector('#cardText');
 
+
 let specificCntry;
+
 
 fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
 
@@ -19,9 +21,11 @@ fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
     if (pakistanOption) {
         pakistanOption.selected = true;
     }
+    dropDown.dispatchEvent(new MouseEvent('onchange'));
 })
 
-btnSubmit.addEventListener('click', () => {
+dropDown.addEventListener('onchange', () => {
+    console.log("hwllo");
     specificCntry = fetch(`https://restcountries.com/v3.1/name/${dropDown.value}`).then((countrySepcficData) => {
         return countrySepcficData.json();
     }).then((data) => {
@@ -30,4 +34,5 @@ btnSubmit.addEventListener('click', () => {
         cardText.innerHTML = `Capital of ${data[0].name.common} : ${data[0].capital[0]}`
     })
 })
+
 
