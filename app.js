@@ -7,19 +7,19 @@ const cardText = document.querySelector('#cardText');
 
 let specificCntry;
 
-// fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
+fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
 
-//     return countryAllData.json();
-// }).then((data) => {
+    return countryAllData.json();
+}).then((data) => {
 
-//     data.forEach(country => {
-//         dropDown.innerHTML += `<option id="countryNameOptn">${country.name.common}</option>`
-//     });
-//     const pakistanOption = [...dropDown.options].find(option => option.textContent === "Pakistan");
-//     if (pakistanOption) {
-//         pakistanOption.selected = true;
-//     }
-// })
+    data.forEach(country => {
+        dropDown.innerHTML += `<option id="countryNameOptn">${country.name.common}</option>`
+    });
+    const pakistanOption = [...dropDown.options].find(option => option.textContent === "Pakistan");
+    if (pakistanOption) {
+        pakistanOption.selected = true;
+    }
+})
 
 btnSubmit.addEventListener('click', () => {
     specificCntry = fetch(`https://restcountries.com/v3.1/name/${dropDown.value}`).then((countrySepcficData) => {
