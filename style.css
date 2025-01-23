@@ -1,0 +1,16 @@
+
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group {
+    width: 50% !important;
+}
+
+
+.card {
+    width: 50% !important;
+}
