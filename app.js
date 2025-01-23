@@ -9,6 +9,7 @@ const cardText = document.querySelector('#cardText');
 let specificCntry;
 
 
+
 fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
 
     return countryAllData.json();
@@ -25,13 +26,11 @@ fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
 })
 
 dropDown.addEventListener('change', () => {
-    console.log("hwllo");
     specificCntry = fetch(`https://restcountries.com/v3.1/name/${dropDown.value}`).then((countrySepcficData) => {
         return countrySepcficData.json();
     }).then((data) => {
         const currencyCode = Object.keys(data[0].currencies)[0]; // Gets the first currency code
         const currency = data[0].currencies[currencyCode];
-        console.log(currency)
         cardImg.src = data[0].flags?.png;
         cardTitle.innerHTML = data[0].name?.common;
         cardText.innerHTML = `${data[0].name.common} (${data[0].name.official}) is located in the ${data[0].region} region, specifically in ${data[0].subregion}. ` +

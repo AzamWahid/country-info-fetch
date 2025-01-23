@@ -1,9 +1,13 @@
-
+body {
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
 .mainBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .input-group {
@@ -13,4 +17,43 @@
 
 .card {
     width: 50% !important;
+    margin-top: 20px;
+    height: 80vh !important;
+    overflow: scroll;
+    
 }
+
+
+#card-img {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+/* 
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {  
+    .input-group, .card  {
+        width: 100% !important;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+    .input-group, .card  {
+        width: 100% !important;
+    }
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
