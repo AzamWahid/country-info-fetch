@@ -10,7 +10,7 @@ let specificCntry;
 
 
 
-fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
+fetch('https://cors-anywhere.herokuapp.com/https://restcountries.com/v3.1/all').then((countryAllData) => {
 
     return countryAllData.json();
 }).then((data) => {
@@ -28,7 +28,7 @@ fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
   });
 
 dropDown.addEventListener('change', () => {
-    specificCntry = fetch(`https://restcountries.com/v3.1/name/${dropDown.value}`).then((countrySepcficData) => {
+    specificCntry = fetch(`https://cors-anywhere.herokuapp.com/https://restcountries.com/v3.1/name/${dropDown.value}`).then((countrySepcficData) => {
         return countrySepcficData.json();
     }).then((data) => {
         const currencyCode = Object.keys(data[0].currencies)[0]; // Gets the first currency code
