@@ -23,7 +23,9 @@ fetch('https://restcountries.com/v3.1/all').then((countryAllData) => {
         pakistanOption.selected = true;
     }
     dropDown.dispatchEvent(new MouseEvent('change'));
-})
+}).catch((err) => {
+    alert('Error: ' + err.message); // Handle errors
+  });
 
 dropDown.addEventListener('change', () => {
     specificCntry = fetch(`https://restcountries.com/v3.1/name/${dropDown.value}`).then((countrySepcficData) => {
